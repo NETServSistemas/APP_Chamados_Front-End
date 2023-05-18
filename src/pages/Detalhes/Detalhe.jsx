@@ -2,6 +2,7 @@ import Chamado from '../Chamado/Chamado';
 import './Detalhe.css';
 import React, { useEffect, useState } from 'react';
 import { DetalhesTeste } from '../../data/detalhes';
+import man from '../../../public/mann.jpg';
 
 
 //component
@@ -32,8 +33,19 @@ const Detalhe = () => {
         <div key={detalhes.idDetalhe} className='detalhe'>
             <div className='detalhes-body'>
                 <h3 className='nmr'>{detalhes.numero}</h3>
-                <h2>{detalhes.nome}</h2>
-                <h3>Setor: {detalhes.setor}</h3>
+                
+                <div className='header'>
+                    <div className='identity'>
+                        <img src={man} alt='img' className='img'/>
+                    </div>
+
+                    <div className='details'>
+                        <h2>{detalhes.nome}</h2>
+                        <h3>Setor: {detalhes.setor}</h3>
+                    </div>
+                    
+                </div>
+                
                 <br></br>
                 <br></br>
                 <p>{detalhes.descricaoDetalhe}</p>

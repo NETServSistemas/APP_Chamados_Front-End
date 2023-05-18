@@ -9,7 +9,7 @@
 
 .detalhe{
     width: 50vw;
-    height: 100vh;
+    min-height: 100vh;
 
     padding: 2em;
 
@@ -80,4 +80,33 @@
     flex-direction: column;
     align-items: flex-end;
     color: #00438F;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+}
+
+.identity{
+    width: 10%;
+}
+
+.identity .img{
+    width: 200%;
+    border-radius: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+
+    width: 50%;
+
+    margin-left: 10%;
+    margin-top: 2%;
 }
