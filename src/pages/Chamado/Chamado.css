@@ -7,19 +7,15 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-}
-
 .Comp{
     background-color: #F5F5F5;
     height: 958px;
     width: 790px;
-    left: 295px;
-    top: 175px;
+    
     border-radius: 5px;
-
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 
 h1{
@@ -131,6 +127,7 @@ select{
 
 button{
     margin-top: 40px;
+    margin: auto;
     width: 347px;
     height: 55px;
     left: calc(50% - 347px/2 - 30px);

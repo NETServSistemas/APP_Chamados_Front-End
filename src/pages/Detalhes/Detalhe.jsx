@@ -1,4 +1,4 @@
-import Chamado from '../Chamado/Chamado';
+
 import './Detalhe.css';
 import React, { useEffect, useState } from 'react';
 import { DetalhesTeste } from '../../data/detalhes';

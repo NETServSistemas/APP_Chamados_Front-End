@@ -1,0 +1,15 @@
+ .meusChamados{
+    width: 155px;
+    height: 33px;
+}
+
+.abrir{
+    width: 155px;
+    height: 33px;
+    background-color: #33BC31;
+    margin-left: 10px;
+}
+
+.search input{
+    margin-left: 65px;
+}

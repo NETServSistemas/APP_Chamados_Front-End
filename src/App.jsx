@@ -4,6 +4,8 @@ import Chamado from './pages/Chamado/Chamado'
 import './App.css'
 import Home from './pages/Home/Home'; //importando a rota do Home
 import Detalhe from './pages/Detalhes/Detalhe' //importando a rota do Detalhes
+import HomeUser from './pages/HomeUser/HomeUser';
+import Comentarios from './pages/Comentarios/Comentarios';
 
 
 class App extends React.Component  {
@@ -24,6 +26,8 @@ class App extends React.Component  {
           <Route path='/' element={<Chamado />} />
           <Route path='/Home' element={<Home />} />
           <Route path='/Detalhes' element={<Detalhe />} />
+          <Route path='/HomeUsers' element={<HomeUser />} />
+          <Route path='/Comentario' element={<Comentarios />} />
         </Routes>
       </Router>
     )

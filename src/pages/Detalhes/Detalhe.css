@@ -16,6 +16,10 @@
     background: #F5F5F5;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 
 .detalhes-body .nmr{

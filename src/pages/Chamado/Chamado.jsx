@@ -6,6 +6,7 @@ import React from 'react';
 //my component
 const Chamado = (props) => {
     return (
+        
         <div className='Comp'>
             <div className='setor'>{props.setor}</div>
             <div className='titulo'>{props.titulo}</div>
@@ -47,6 +48,7 @@ const Chamado = (props) => {
 
             <button className='enviar'>Enviar</button>
         </div>
+  
     )
 }
 
