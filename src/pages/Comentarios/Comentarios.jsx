@@ -86,7 +86,7 @@ const Comentarios = () => {
                     </div>
                 </div>
                     <div className='add'>
-                            <button>+</button>
+                        <button>+</button>
                     </div>
                 </div>
         </body>
