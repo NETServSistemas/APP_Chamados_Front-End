@@ -69,7 +69,6 @@ const Home = () =>{
         <div className='chamados'> 
             <div className='abertos'>
                 <div className='titulo'>
-                    
                     <h1>Abertos</h1>
                 </div>
                     {chamadosAberto.map((chamado) => {

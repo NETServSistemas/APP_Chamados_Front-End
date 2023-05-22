@@ -11,15 +11,21 @@
 body{
     display: flex;
     flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .infoComentarios{
-    width: 34vw;
+    width: 30vw;
     height: 100vh;
 
     padding: 2em;
     display: flex;
     flex-direction: column;
+    
     background: #ECECEC;
     box-shadow: 0px 3px 4px 3px rgba(0, 0, 0, 0.2)
 }
@@ -49,14 +55,12 @@ body{
     
 }
 
-.detailsComentarios .bodyDetails .img{
-    width: 30%;
+.detailsComentarios .bodyDetails img{
+    width: 39%;
     border-radius: 200px;
 
     display: flex;
     flex-direction: column;
-
-    
 }
 
 .detailsComentarios .star{
@@ -99,6 +103,60 @@ body{
     font-size: 16px;
     font-weight: 400;  
     margin-top: 5%; 
+}
+
+.resposta{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.header-info{
+    display: flex;
+    flex-direction: row;
+
+    width: 88%;
+    min-height: 35%;
+    padding: 1.5rem;
+    margin-left: 6%;
+    margin-top: 5%;
+    background: #ECECEC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.icon img{
+    width: 75%;
+    border-radius: 100px;
+}
+
+.informa{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50%;
+}
+
+.informa h2{
+    color: #00438F;
+    font-weight:600;
+}
+
+.informa h3{
+    color: #DF2E2E;
+    font-weight:400;
+}
+
+.informa p{
+    font-size: 12px;
+}
+
+.add button{
+    border-radius: 200px;
+    width: 80px;
+    height: 80px;
+    font-size: 35px;
+    color: #ffff;
+    margin-top:35%;
+    margin-left: 88%;
 }
 
 

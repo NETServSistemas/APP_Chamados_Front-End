@@ -1,7 +1,9 @@
 import './Comentarios.css'
 import React, { useEffect, useState } from 'react';
 import {Comentario} from '../../data/comentarios';
+import {Respostas} from '../../data/respostas';
 import man from '../../../public/mann.jpg';
+import man2 from '../../../public/man2.jpg'
 import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { formatDistance, subDays } from 'date-fns'
@@ -20,6 +22,21 @@ const Comentarios = () => {
         buscaComentarios();
     })
 
+    //respostas
+    const [respostas, setRespostas] = useState([]);
+    const [respostasAbertas, setRespostasAbertas] = useState([]);
+
+    useEffect(() => {
+        const buscaRespostas = async() => {
+            const respostas = Respostas;
+            setRespostas(respostas);
+            setRespostasAbertas(respostas.filter((r) => r.statusResposta == "ABERTO"))
+        }
+
+        buscaRespostas();
+    }, [])
+
+
     return(
         <body>
         <div key={comentarios.idComentario} className='infoComentarios'>
@@ -34,12 +51,7 @@ const Comentarios = () => {
                                 <FontAwesomeIcon icon={faStar} className='starFavoritar'/>
                             </div>
                         </div>
-                        
-                       
-
                     </div>
-                    
-                    
 
                     <div className='coment'>
                         <p>{comentarios.descricaoComentario}</p>
@@ -58,9 +70,25 @@ const Comentarios = () => {
                 </div>
 
             </div>
-            
-                
 
+            <div className='resposta'>
+                <div className='header-info'>
+                    <div className='icon'>
+                        <img src={man2} alt='img' className='img'/>
+                    </div>
+                    <div className='informa'>
+                        <h2>{respostas.nome}</h2>
+                        <h3>{respostas.setor}</h3>
+                        <br></br>
+                        <p>{respostas.descricaoResposta}</p>
+                        <br></br>
+                        <p>{respostas.ass}</p>
+                    </div>
+                </div>
+                    <div className='add'>
+                            <button>+</button>
+                    </div>
+                </div>
         </body>
     )
 }

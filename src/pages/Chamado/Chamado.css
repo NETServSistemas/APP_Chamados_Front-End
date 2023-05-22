@@ -15,13 +15,14 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin-top: 10%;
 }
 
-h1{
+.Comp h1{
     color: #00438F;
-    padding-top: 35px;
-    margin-right: 42%;
+    font-size: 32px;
+    margin: 0;
+    margin-left: 5%;
 }
 
 .info{
