@@ -30,6 +30,11 @@ const Detalhe = () => {
     const today = new Date(timeElapsed);
 
     return(
+
+
+
+
+
         <div key={detalhes.idDetalhe} className='detalhe'>
             <div className='detalhes-body'>
                 <h3 className='nmr'>{detalhes.numero}</h3>

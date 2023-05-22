@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons'
 import logoNetserv from '../../../public/Logo2.png'
 import { ChamadosTeste } from '../../data/chamados';
+import Modal from 'react-modal';
 
 async function wait(ms){
     var start = new Date().getTime();
@@ -13,7 +14,21 @@ async function wait(ms){
    }
  }
 
+ Modal.setAppElement("#root"); //referencia do modal
+
 const Home = () =>{
+
+    const [modalIsOpen, setIsOpen] = React.useState(false); //inicializando o modal
+
+    //função para abrir o modal
+    function openModal() {
+        setIsOpen(true);
+      }
+
+      //função para fechar o modal
+      function closeModal() {
+        setIsOpen(false);
+      }
 
     const [chamados, setChamados] = useState([])
     const [chamadosAberto, setChamadossAberto] = useState([])
@@ -92,7 +107,17 @@ const Home = () =>{
                                     <br></br>
                                     <p>{chamado.tituloChamado}</p>
                                     <p>{chamado.descricaoChamado}</p>
-                                    <button>Ver mais</button>
+                                    <button onClick={openModal}>Ver mais</button>
+
+                                    <Modal
+                                        isOpen={modalIsOpen}
+                                        onRequestClose={closeModal}
+                                        contentLabel="Example Modal"
+                                        overlayClassName="modal-overlay"
+                                        className="modal-content"
+                                    >
+                                         
+                                    </Modal>
                                 </div>
                             </div>
                         )
