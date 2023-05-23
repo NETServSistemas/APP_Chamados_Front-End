@@ -20,7 +20,7 @@ export const ChamadosTeste = [
         ]
     },
     {
-        idChamado: "472817a4-f4eb-11ed-a05b-0242ac120003",
+        idChamado: "472817a4-f4eb-11ed-a05b-0242ac120004",
         nome: "Manoel",
         setor: "Redes",
         tituloChamado: "mouse",
@@ -37,7 +37,7 @@ export const ChamadosTeste = [
         ]
     },
     {
-        idChamado: "472819fc-f4eb-11ed-a05b-0242ac120003",
+        idChamado: "472819fc-f4eb-11ed-a05b-0242ac120005",
         nome: "Lucas",
         setor: "Suporte técnico",
         tituloChamado: "Gauzer",

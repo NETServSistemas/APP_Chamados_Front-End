@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons'
 import logoNetserv from '../../../public/Logo2.png'
 import { ChamadosTeste } from '../../data/chamados';
-import Modal from 'react-modal';
+import { DetalhesTeste } from '../../data/detalhes';
+import man from '../../../public/mann.jpg';
 
 async function wait(ms){
     var start = new Date().getTime();
@@ -14,22 +15,43 @@ async function wait(ms){
    }
  }
 
- Modal.setAppElement("#root"); //referencia do modal
+ //Modal.setAppElement("#modal"); //referencia do modal
 
 const Home = () =>{
 
     const [modalIsOpen, setIsOpen] = React.useState(false); //inicializando o modal
+    const [detalhes, setDetalhes] = useState([])
+    const [detalhe, setDetalhe] = useState(null)
+    const [detalhesChamadoID, setDetalhesChamadoID] = useState("")
+
+
+    //efeitos colaterais que executa operações que não está totalmente ligada ao componente em si
+    //esses efeitos podem ser a busca por dados de uma API ou alteração do DOM, registrar eventos etc
+    useEffect(() => {
+        const getDetalhes = async() => {
+            const detalhes = DetalhesTeste //aqui pegamos os dados do nosso arquivo que contém um JSON e trazemos a nosso componente
+            setDetalhes(detalhes)
+        }
+
+        getDetalhes() //executando a função criada 
+    })
 
     //função para abrir o modal
-    function openModal() {
-        setIsOpen(true);
+    const handleVerDetalhesChamado = (idChamado) => { //esta função recebe como parâmetro o idChamado que está no JSON do arq chamados.js
+        setDetalhesChamadoID(idChamado)
+        const detalhe = detalhes.filter(d => d.idChamado = idChamado)[0]; //filtra todos os ids dos chamados do array de chamados
+        setDetalhe(detalhe);
+        setIsOpen(true); //abre o modal com esta função
       }
 
       //função para fechar o modal
-      function closeModal() {
-        setIsOpen(false);
+      function closeModal() {   //fecha o modal deixando null os métodos que ativa ele
+        setDetalhesChamadoID(null)
+        setDetalhe(null);
+        setIsOpen(false); //fecha o modal da tela
       }
 
+    //TRAZENDO OS CHAMADOS DO JSON chamados.js
     const [chamados, setChamados] = useState([])
     const [chamadosAberto, setChamadossAberto] = useState([])
     const [chamadosAtendimento, setChamadosAtendimento] = useState([])
@@ -52,8 +74,58 @@ const Home = () =>{
         )
     }
 
+    console.log(detalhe)
+
+    //pegando a data
+    const timeElapsed = Date.now();
+    const today = new Date(timeElapsed);
+
     return (
-    <body>
+    <>
+        {/*ADICIONANDO O MODAL DIRETAMENTE DO BOOTSTRAP */}
+        <div className={`modal ${modalIsOpen == false  ? 'fade' : ''}`} id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> {/*fazemos uma verificação se existe um modal */}
+            <div className="modal-dialog">
+                <div className="modal-content">
+                <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">Detalhes do chamado</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="modal-body">
+                   {/* codigo detalhes */}
+                   <div className='detalhes-body'>
+                        <h3 className='nmr'>{detalhe ? detalhe.numero : ""}</h3> {/*verificando se o user apertou o botão para trazer o modal*/}
+                        
+                        <div className='header'>
+                            <div className='identity'>
+                                 <img src={man} alt='img' className='img'/> 
+                            </div>
+
+                            <div className='details'>
+                                <h2>{detalhe ? detalhe.nome:  ""}</h2> {/*verificando se o user apertou o botão para trazer o modal*/}
+                                <h3>Setor: {detalhe ? detalhe.setor : ""}</h3> {/*verificando se o user apertou o botão para trazer o modal*/}
+                            </div>
+                            
+                        </div>
+                        
+                        <br></br>
+                        <br></br>
+                        <p>{detalhe ? detalhe.descricaoDetalhe : ""}</p> {/*verificando se o user apertou o botão para trazer o modal*/}
+                    </div>
+
+                    <div className='buttons'>
+                        <button className='Atender'>Atender</button>
+                        <button className='Recusar'>Recusar</button>
+                    </div>
+
+                    <div className='date'>
+                         <p> {today.toLocaleDateString()}</p> 
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        {/*FIM MODAL*/}
+        
         <header>
             <div className='line'>
                 <div className='btns'>
@@ -81,7 +153,9 @@ const Home = () =>{
          </header>
 
         <main>
+        
         <div className='chamados'> 
+        
             <div className='abertos'>
                 <div className='titulo'>
                     <h1>Abertos</h1>
@@ -107,17 +181,9 @@ const Home = () =>{
                                     <br></br>
                                     <p>{chamado.tituloChamado}</p>
                                     <p>{chamado.descricaoChamado}</p>
-                                    <button onClick={openModal}>Ver mais</button>
-
-                                    <Modal
-                                        isOpen={modalIsOpen}
-                                        onRequestClose={closeModal}
-                                        contentLabel="Example Modal"
-                                        overlayClassName="modal-overlay"
-                                        className="modal-content"
-                                    >
-                                         
-                                    </Modal>
+                                    <button onClick={() => handleVerDetalhesChamado(chamado.idChamado)} data-bs-toggle="modal" data-bs-target="#exampleModal">Ver mais</button>
+                                    
+                                    
                                 </div>
                             </div>
                         )
@@ -150,7 +216,7 @@ const Home = () =>{
                                 <br></br>
                                 <p>{chamado.tituloChamado}</p>
                                 <p>{chamado.descricaoChamado}</p>
-                                <button>Ver mais</button>
+                                <button onClick={() => handleVerDetalhesChamado(chamado.idChamado)} data-bs-toggle="modal" data-bs-target="#exampleModal">Ver mais</button>
                             </div>
                         </div>
                     )
@@ -172,7 +238,8 @@ const Home = () =>{
         </div>
         </main>
         
-    </body>
+        
+    </>
     )    
 }
     

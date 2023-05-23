@@ -44,9 +44,10 @@ const Chamado = (props) => {
                         <label>Descrição</label>
                         <textarea className='descr' name='descricao' value={props.descricao} rows="10" cols="40"/>
                     </div>
+                    <button className='enviar'>Enviar</button>
             </div>
 
-            <button className='enviar'>Enviar</button>
+            
         </div>
   
     )

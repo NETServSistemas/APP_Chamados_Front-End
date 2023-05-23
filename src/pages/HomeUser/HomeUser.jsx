@@ -4,10 +4,16 @@ import logoNetserv from '../../../public/Logo2.png';
 import { ChamadosUser } from '../../data/chamadosUser';
 import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { ChamadosTeste } from '../../data/chamados';
 
 //component
 const HomeUser = () => {
 
+    const [modalIsOpen, setIsOpen] = React.useState(false); //inicializando o modal
+
+  
+
+    //TRAZENDO OS CHAMADOS DO JSON chamados.js
     const [chamados, setChamados] = useState([])
     const [chamadosAberto, setChamadossAberto] = useState([])
     const [chamadosAtendimento, setChamadosAtendimento] = useState([])
@@ -23,14 +29,70 @@ const HomeUser = () => {
     buscaChamados();
 }, [])
 
+  //função para abrir o modal
+  //setIsOpen(true); //abre o modal com esta função
+
+  function closeModal(){ 
+      setIsOpen(false); //fecha o modal da tela
+  }
+  
 
     return(
-        <body>
+        <>
+            {/* ADICIONANDO O MODAL DIRETAMENTE DO BOOTSTRAP*/}
+            <div className={`modal ${modalIsOpen == false  ? 'fade' : ''}`} id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> {/*fazemos uma verificação se existe um modal */}
+            <div className="modal-dialog">
+                <div className="modal-content">
+                <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">Abrindo chamado</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="modal-body">
+                   {/* codigo detalhes */}
+                        <div className='formChamado'>
+                            <div className='info'>
+                                <span> De: Setor Comercial</span>
+                                <div className='selectionSetor'>
+                                    <span> Para:</span>
+                                        <select>
+                                            <option value="">Selecione seu setor</option>
+                                            <option value="Compras">Compras</option>
+                                            <option value="RH">RH</option>
+                                            <option value="Financeiro">Financeiro</option>
+                                            <option value="Comercial">Comercial</option>
+                                            <option value="Suporte Interno">Suporte Interno</option>
+                                            <option value="Redes">Redes</option>
+                                            <option value="Sistemas">Sistemas</option>
+                                            <option value="Telefonia">Telefonia</option>
+                                            <option value="Estoque">Estoque</option>
+                                            <option value="Frota">Frota</option>
+                                        </select>
+                                </div>                    
+                            </div>
+
+                        <div className='tituloChamado'>
+                            <label>Título: </label>
+                            <input type='text' name='titulo' placeholder='Digite aqui o título do chamado'></input>
+                        </div>
+
+                            <div className='descricao'>
+                                <label>Descrição</label>
+                                <textarea className='descr' name='descricao' rows="10" cols="40"/>
+                            </div>
+                            <button className='enviar'>Enviar</button>
+                    </div>
+
+                    
+                </div>
+                </div>
+            </div>
+        </div>
+
         <header>
             <div className='line'>
                 <div className='btns'>
                     <button className='meusChamados' >Meus Chamados</button>
-                    <button className='abrir'>Abrir Chamado</button>
+                    <button className='abrir'  onClick={() => setIsOpen(true)} data-bs-toggle="modal" data-bs-target="#exampleModal">Abrir Chamado</button>
                 </div>
 
                 <div className='search'>
@@ -123,7 +185,7 @@ const HomeUser = () => {
                 </div>
             </div>
         </main>
-    </body>
+    </>
     )
 }
 

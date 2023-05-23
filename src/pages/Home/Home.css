@@ -92,7 +92,6 @@ main .chamados{
     display: flex;
     flex-direction: row;
     min-height: 100vh;
-    margin-left: 7%;
     margin-top: 10%;
 }
 
@@ -296,3 +295,102 @@ main .chamados .concluido{
     color:#00438F;
 }
 
+/*MODAL*/
+.modal-dialog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content{
+    width: 50vw;
+    padding: 2rem;
+}
+
+.details{
+    margin-left: 15%;
+}
+
+
+.detalhes-body .nmr{
+    color: #00438F;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.detalhes-body h2{
+    font-weight: 600;
+    font-size: 32px;
+    color: #00438F;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.detalhes-body h3{
+    font-weight: 400;
+    font-size: 20px;
+    color: #DF2E2E;
+
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+.detalhes-body p{
+    font-weight: 400;
+    font-size: 24px;
+    color:#404040;
+    padding: 3rem;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+
+    align-items: flex-start;
+    margin-top: 30%;
+ }
+
+.buttons .Atender{
+    background-color: #33BC31;
+    width: 132px;
+    height: 48px;
+}
+
+.buttons .Recusar{
+    background-color: #DF2E2E;
+    width: 132px;
+    height: 48px;
+
+    margin-left: 5%;
+}
+
+.date{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #00438F;
+    margin-top: 10%;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.identity{
+    width: 10%;
+}
+
+.identity .img{
+    width: 200%;
+    border-radius: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
