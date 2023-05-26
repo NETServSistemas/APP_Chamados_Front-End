@@ -181,7 +181,6 @@ const Home = () =>{
          </header>
 
         <main>
-        
         <div className='chamados'> 
         
             <div className='abertos'>

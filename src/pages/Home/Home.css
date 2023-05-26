@@ -20,11 +20,19 @@ header{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.line{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    height: 11%;
+    margin-top: 50px;
+}
+
 .btns .btn {
     background-color: #F8F8F8;
     border-style: none;
     color: #8B51A1;
-    margin: auto;
+   
 }
 
 .btns button{
@@ -86,13 +94,13 @@ header{
 
 .image{
     position: absolute;
-    width: 15%;
-    height: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
+    top: 0;
     margin-left: 78%;
 }
+
+
+
+
 /*fim header*/
 
 /*kanban*/
@@ -230,6 +238,7 @@ main .chamados .concluido{
     flex-direction: column;
 
     align-items: flex-start;
+    border-radius: 8px;
 }
 
 .chamado-body {
@@ -244,6 +253,7 @@ main .chamados .concluido{
     flex-direction: column;
 
     align-items: flex-start;
+    border-radius: 8px;
 }
 
 .chamado-body h2{
@@ -293,6 +303,7 @@ main .chamados .concluido{
     border-style: solid;
     border-color: #00438F; */
     display: flex;
+
 }
 
 .star{

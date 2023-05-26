@@ -5,6 +5,7 @@ import './App.css'
 import Home from './pages/Home/Home'; //importando a rota do Home
 import HomeUser from './pages/HomeUser/HomeUser';
 import Comentarios from './pages/Comentarios/Comentarios';
+import CadastraModelo from './pages/Cadastro/CadastroModelos';
 
 
 class App extends React.Component  {
@@ -26,6 +27,7 @@ class App extends React.Component  {
           <Route path='/Home' element={<Home />} />
           <Route path='/HomeUsers' element={<HomeUser />} />
           <Route path='/Comentario' element={<Comentarios />} />
+          <Route path='/CadastroModelos' element={<CadastraModelo />} />
         </Routes>
       </Router>
     )
