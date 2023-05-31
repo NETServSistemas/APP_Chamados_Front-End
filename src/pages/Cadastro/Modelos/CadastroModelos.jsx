@@ -1,3 +1,4 @@
+import HeaderComponent from '../../../Componentes/Header';
 import './CadastroModelos.css';
 import React, {useState} from 'react';
 
@@ -62,7 +63,7 @@ const CadastraModelo = (props) => {
 
     return(
         <div className='CompCadastro'>
-
+            <HeaderComponent />
             <div className='container'>
                 <h1>Cadastro de Modelos</h1>
                     <div className='form'>

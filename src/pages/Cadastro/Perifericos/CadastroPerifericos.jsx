@@ -1,3 +1,4 @@
+import HeaderComponent from '../../../Componentes/Header';
 import './CadastroPerifericos.css';
 import React, {useState} from 'react';
 
@@ -10,6 +11,7 @@ const CadastroPerifericos = (props) => {
 
     /*função de limpar campos */
     const handlelimpar = () => {
+
         setDescricao('');
         setTipoPeriferico('');
         setMarcaPeriferico('');
@@ -42,11 +44,16 @@ const CadastroPerifericos = (props) => {
         dadosContainer.appendChild(lista);
     }
 
-    return(
-        <div className='compCadastro'>
-            <div className='container'>
+    return (
+        <div className='compCadastroPeriferico'>
+
+            <HeaderComponent />
+
+            <div className='containerPeriferico'>
                 <h1>Cadastro de Periféricos</h1>
-                    <div className='form'>
+
+                  
+                     <div className='form'>
 
                         <div className='campo'>
                         <label>Descrição:</label>
@@ -92,14 +99,15 @@ const CadastroPerifericos = (props) => {
                         </div>
 
                         <div className='btns'>
-                            <button className='salvar' onClick={handleSalvar}>Salvar</button>
-                            <button className='limpar' onClick={handlelimpar}>Limpar</button>
+                            <button className='salvar' onClick={() => handleSalvar()}>Salvar</button>
+                            <button className='limpar' onClick={() => handlelimpar()}>Limpar</button>
                         </div>
-                    </div>
+                    </div> 
             </div>
 
-            <div className='dados'></div>
-        </div>
+            <div className='dados'></div> 
+         </div>
+        
     )
 }
 

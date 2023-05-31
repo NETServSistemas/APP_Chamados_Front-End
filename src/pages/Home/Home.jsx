@@ -6,6 +6,7 @@ import logoNetserv from '../../../public/Logo2.png'
 import { ChamadosTeste } from '../../data/chamados';
 import { DetalhesTeste } from '../../data/detalhes';
 import man from '../../../public/mann.jpg';
+import HeaderComponent from '../../Componentes/Header';
 
 async function wait(ms){
     var start = new Date().getTime();
@@ -92,8 +93,8 @@ const Home = () =>{
                 </div>
                 <div className="modal-body">
                    {/* codigo detalhes */}
-                   <div className='detalhes-body'>
-                        <h3 className='nmr'>{detalhe ? detalhe.numero : ""}</h3> {/*verificando se o user apertou o botão para trazer o modal*/}
+                   <div className='detalhes-body'>    
+                            <h3 className='nmr'>Numero do chamado: {detalhe ? detalhe.numero : ""}</h3> {/*verificando se o user apertou o botão para trazer o modal*/} 
                         
                         <div className='header'>
                             <div className='identity'>
@@ -103,6 +104,11 @@ const Home = () =>{
                             <div className='details'>
                                 <h2>{detalhe ? detalhe.nome:  ""}</h2> {/*verificando se o user apertou o botão para trazer o modal*/}
                                 <h3>Setor: {detalhe ? detalhe.setor : ""}</h3> {/*verificando se o user apertou o botão para trazer o modal*/}
+                                <h3>Setor de destino: {detalhe ? detalhe.destino : ""}</h3>
+
+                                <h3 className='contato'>
+                                    <span>ricardo.carvalho@netserv.com.br</span>
+                                </h3>
                             </div>
                             
                         </div>
@@ -117,15 +123,13 @@ const Home = () =>{
                         <button className='Recusar'>Recusar</button>
                     </div>
 
-                    <div className='date'>
-                         <p> {today.toLocaleDateString()}</p> 
-                    </div>
+                    
                 </div>
                 </div>
             </div>
         </div>
         {/*FIM MODAL*/}
-        
+        {/*
         <header>
             <div className='line'>
                 <div className='btns'>
@@ -150,22 +154,22 @@ const Home = () =>{
 
                
 
-                {/*navbar*/}
+                navbar*
                 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                     <div className="offcanvas-header">
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div className="offcanvas-body">
                         <div className='bodylink'>
-                            <a href='#'>Cadastro de Modelos</a>
+                            <a href='/CadastroModelos'>Cadastro de Modelos</a>
                         </div>
                        
                         <div className='bodylink'>
-                            <a href='#'>Cadastro de Periféricos</a>
+                            <a href='/CadastroPerifericos'>Cadastro de Periféricos</a>
                         </div>
 
                         <div className='bodylink'>
-                            <a href='#'>Cadastro de Pessoas</a>
+                            <a href='/CadastraPessoas'>Cadastro de Pessoas</a>
                         </div>
                     </div>
                 </div>
@@ -178,7 +182,9 @@ const Home = () =>{
                     <img src={logoNetserv} alt='img' className='logo'/>
                 </div>
             </div>
-         </header>
+    </header> */}
+
+    <HeaderComponent />
 
         <main>
         <div className='chamados'> 

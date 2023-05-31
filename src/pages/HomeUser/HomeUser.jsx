@@ -4,6 +4,7 @@ import logoNetserv from '../../../public/Logo2.png';
 import { ChamadosUser } from '../../data/chamadosUser';
 import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import HeaderComponent from '../../Componentes/Header';
 // import { ChamadosTeste } from '../../data/chamados';
 
 //component
@@ -88,7 +89,7 @@ const HomeUser = () => {
             </div>
         </div>
 
-        <header>
+        {/* <header>
             <div className='line'>
                 <div className='btns'>
                     <button className='meusChamados' >Meus Chamados</button>
@@ -103,7 +104,9 @@ const HomeUser = () => {
                     <img src={logoNetserv} alt='img' className='logo'/>
                 </div>
             </div>
-         </header>
+         </header> */}
+
+         <HeaderComponent />
 
          <main>
         <div className='chamados'> 
