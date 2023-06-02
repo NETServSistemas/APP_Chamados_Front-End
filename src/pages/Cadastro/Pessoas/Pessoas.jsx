@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import './Pessoas.css'
+import HeaderComponent from '../../../Componentes/Header';
 
 const CadastraPessoas = (props) => {
     //criando um estado para cada campo do formulário
@@ -46,6 +47,8 @@ const CadastraPessoas = (props) => {
 
     return(
         <div className="CompCadastro">
+            <HeaderComponent />
+            
             <div className="container">
                 <h1>Cadastro de Pessoas</h1>
                 <div className='form'>

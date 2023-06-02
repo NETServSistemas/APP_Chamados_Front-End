@@ -10,7 +10,7 @@
 /*header*/
 header{
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 11%;
     left: 0px;
     top: 0px;
@@ -45,23 +45,11 @@ header{
     height: 35px;
     background: #8B51A1;
     border-radius: 10px;
+    border-style: hidden;
+    color: #ECECEC;
 }
 
-.iconFunil{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-    margin-top: 2px;
-}
-
-.iconStar{
-    position: absolute;
-    width: 24px;
-    height: 23px;
-}
-
-.urgentes{
+.abrirChamado{
     width: 120px;
     height: 35px;
 
@@ -69,6 +57,10 @@ header{
     border-radius: 10px;
 
     margin-left: 10px;
+    font-size: 12px;
+
+    border-style: hidden;
+    color: #ECECEC;
 }
 
 .search input{
@@ -76,10 +68,10 @@ header{
     position: absolute;
     width: 530px;
     height: 38px;
-    left: 316px;
+    left: 450px;
     top: 20px;
 
-    background: #faf8f8;
+    background: #faf8f8; 
     /* PrimaryColorBlue */
     border-style: none;
     border-radius: 5px;
@@ -97,8 +89,21 @@ header{
     margin-left: 78%;
 }
 
+.bemVindo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    width: 30%;
+    position: absolute;
+    top: 0;
+    left: 78%;
+}
 
-
+.bemVindo img{
+    width: 10%;
+    border-radius: 100px;
+    margin-left: 5px;
+}
 
 /*fim header*/
 
@@ -106,13 +111,14 @@ header{
 main .chamados{
     display: flex;
     flex-direction: row;
-    min-height: 100vh;
-    margin-top: 10%;
+    position: absolute;
+    top: 150px;
+    left: 2%;
 }
 
 /*abertos*/
 main .chamados .abertos{
-    width: 300px;
+    width: 270px;
     height: 808px;
     
     
@@ -128,7 +134,7 @@ main .chamados .abertos{
 }
 
 .chamados .abertos .titulo{
-    width: 300px;
+    width: 270px;
     height: 65px;
     background-color: #00438F;
     border-radius: 5px;
@@ -146,7 +152,7 @@ h1{
 
 /*andamento*/
 main .chamados .andamento{
-    width: 300px;
+    width: 270px;
     height: 808px;
     left: 67px;
     top: 291px;
@@ -154,7 +160,7 @@ main .chamados .andamento{
     background: #F8F8F8;
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    margin-left: 40px;
+    margin-left: 25px;
 
     border-style: solid;
     border-top: none;
@@ -164,7 +170,7 @@ main .chamados .andamento{
 }
 
 .chamados .andamento .titulo{
-    width: 300px;
+    width: 270px;
     height: 65px;
     background-color: #00438F;
     border-radius: 5px;
@@ -173,7 +179,7 @@ main .chamados .andamento{
 
 /*cancelado*/
 main .chamados .cancelado{
-    width: 300px;
+    width: 270px;
     height: 808px;
     left: 67px;
     top: 291px;
@@ -181,7 +187,7 @@ main .chamados .cancelado{
     background: #F8F8F8;
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    margin-left: 40px;
+    margin-left: 25px;
 
     border-style: solid;
     border-top: none;
@@ -191,16 +197,16 @@ main .chamados .cancelado{
 }
 
 .chamados .cancelado .titulo{
-    width: 300px;
+    width: 270px;
     height: 65px;
     background-color: #00438F;
     border-radius: 5px;
 }
 /*fim cancelado*/
 
-/*concluido*/
-main .chamados .concluido{
-    width: 300px;
+/*QlqrCoisa*/
+main .chamados .qlqrNome{
+    width: 270px;
     height: 808px;
     left: 67px;
     top: 291px;
@@ -208,7 +214,33 @@ main .chamados .concluido{
     background: #F8F8F8;
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    margin-left: 40px;
+    margin-left: 25px;
+
+    border-style: solid;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left-color: #DF2E2E;
+}
+
+.chamados .qlqrNome .titulo{
+    width: 270px;
+    height: 65px;
+    background-color: #00438F;
+    border-radius: 5px;
+}
+
+/*concluido*/
+main .chamados .concluido{
+    width: 270px;
+    height: 808px;
+    left: 67px;
+    top: 291px;
+    
+    background: #F8F8F8;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin-left: 25px;
 
     border-style: solid;
     border-top: none;
@@ -218,7 +250,7 @@ main .chamados .concluido{
 }
 
 .chamados .concluido .titulo{
-    width: 300px;
+    width: 270px;
     height: 65px;
     background-color: #00438F;
     border-radius: 5px;
@@ -231,7 +263,7 @@ main .chamados .concluido{
     padding: 15px;
     background-color: rgba(248, 227, 166, .4);
 
-    width: 300px;
+    width: 200px;
 
     display: flex;
     flex-direction: column;
@@ -246,7 +278,7 @@ main .chamados .concluido{
     padding: 15px;
     background-color: rgba(152, 211, 151, .4);
 
-    width: 300px;
+    width: 200px;
 
     display: flex;
     flex-direction: column;
@@ -257,40 +289,51 @@ main .chamados .concluido{
 
 .chamado-body h2{
     color: #00438F;
+    font-size: 20px;
 }
 
 .chamado-body-atendimento h2{
     color: #00438F;
+    font-size: 20px;
 }
 
 .chamado-body h3{
     color: #DF2E2E;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .chamado-body-atendimento h3{
     color: #DF2E2E;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .chamado-body button{
-    width: 100px;
+    width: 90px;
     height: 35px;
-    margin-left: 100px;
+    background-color: #8B51A1;
+    border-style: hidden;
+    border-radius: 5px;
+    color: #ECECEC;
+    font-size: 13px;
 }
 
 .chamado-body-atendimento button{
-    width: 100px;
+    width: 80px;
     height: 35px;
-    margin-left: 100px;
+    margin-left: 95px;
+    background-color: #8B51A1;
+    border-style: hidden;
+    border-radius: 5px;
+    color: #ECECEC;
+    font-size: 13px;
 }
 
 .chamado-body button{
-    width: 100px;
+    width: 80px;
     height: 35px;
-    margin-left: 100px;
+    margin-left: 95px;
 }
 
 .chamado {
@@ -298,11 +341,7 @@ main .chamados .concluido{
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 8px;
-    /* background-color: #FFF;
-    border-style: solid;
-    border-color: #00438F; */
     display: flex;
-
 }
 
 .star{
@@ -371,7 +410,7 @@ span{
     color:#404040;
     margin: auto;
 }
-.buttons{
+.atenderRecusar{
     display: flex;
     flex-direction: row;
 
@@ -380,13 +419,13 @@ span{
     justify-content: center;
  }
 
-.buttons .Atender{
+.atenderRecusar .Atender{
     background-color: #33BC31;
     width: 132px;
     height: 48px;
 }
 
-.buttons .Recusar{
+.atenderRecusar .Recusar{
     background-color: #DF2E2E;
     width: 132px;
     height: 48px;
@@ -441,18 +480,62 @@ span{
 .bodylink{
     background: #8B51A1;
     width: 100%;
-    height: 10%;
+    height: 25%;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 5%;
+    display: flex;
+    flex-direction: column; 
 }
 
 .bodylink a{
     display: flex;
     flex-direction: column;
-    margin-left: 18%;
-    margin-top: 6%;
+    margin-top: 4%;
     color: #FFFFFF;
+    text-decoration: none;
+    align-items: center;
+}
+
+ .bodyInfo img{
+    width: 50%;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.bodyInfo h2{
+    font-size: 20px;
+    color: #00438F;
+    text-align: center;
+    margin-top: 8%;
+    font-weight: 600;
+}
+
+.bodyInfo h3{
+    font-size: 18px;
+    color: #DF2E2E;
+    text-align: center;
+    font-weight: 400;
+}
+
+.bodyInfo span{
+    font-size: 14px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    min-height: 30%;
+    min-width: 100%;
+    justify-content: center;
+}
+
+.btnSair a{
+    font-size: 16px;
+    font-weight: 600;
+    color: #00438F;
     text-decoration: none;
 }
 

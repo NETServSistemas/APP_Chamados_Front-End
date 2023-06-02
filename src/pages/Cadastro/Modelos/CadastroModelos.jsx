@@ -59,8 +59,6 @@ const CadastraModelo = (props) => {
     dadosContainer.appendChild(lista); //adicionando a lista à div dadosContainer
 }
 
-
-
     return(
         <div className='CompCadastro'>
             <HeaderComponent />
