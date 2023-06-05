@@ -26,7 +26,7 @@ const HeaderComponent = () => {
 
 return (
     <>
-        <div className={`modal ${modalIsOpen == false  ? 'fade' : ''}`} id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> {/*fazemos uma verificação se existe um modal */}
+        <div className={`modal ${modalIsOpen == false  ? 'fade' : ''}`} id="abrirChamadoModal" tabindex="-1" aria-labelledby="abrirChamadoModalLabel" aria-hidden="true"> {/*fazemos uma verificação se existe um modal */}
             <div className="modal-dialog">
                 <div className="modal-content">
                 <div className="modal-header">
@@ -82,7 +82,7 @@ return (
 
                     <button className='filtro' >Filtro</button>
 
-                    <button className='abrirChamado' data-bs-toggle="modal" data-bs-target="#exampleModal">Abrir Chamado</button> 
+                    <button className='abrirChamado' data-bs-toggle="modal" data-bs-target="#abrirChamadoModal">Abrir Chamado</button> 
 
                 </div>
 

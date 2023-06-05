@@ -6,6 +6,8 @@ import { ChamadosTeste } from '../../data/chamados';
 import { DetalhesTeste } from '../../data/detalhes';
 import man from '../../../public/mann.jpg';
 import HeaderComponent from '../../Componentes/Header';
+import { Link } from 'react-router-dom';
+
 
 async function wait(ms){
     var start = new Date().getTime();
@@ -118,7 +120,9 @@ const Home = () =>{
                     </div>
 
                     <div className='atenderRecusar'>
-                        <button className='Atender'>Atender</button>
+                        <Link to="/Comentario">
+                            <button className='Atender' >Atender</button>
+                        </Link>
                         <button className='Recusar'>Recusar</button>
                     </div>
 
@@ -211,9 +215,9 @@ const Home = () =>{
                 </div>
             </div>
 
-            <div className='qlqrNome'>
+            <div className='Urgentes'>
                 <div className='titulo'>
-                    <h1>QlqrNome</h1>
+                    <h1>Urgentes</h1>
                 </div>
             </div>
         </div>
