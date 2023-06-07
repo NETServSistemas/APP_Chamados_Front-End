@@ -7,6 +7,7 @@ import Comentarios from './pages/Comentarios/Comentarios';
 import CadastraModelo from './pages/Cadastro/Modelos/CadastroModelos';
 import CadastraPessoas from './pages/Cadastro/Pessoas/Pessoas';
 import CadastroPerifericos from './pages/Cadastro/Perifericos/CadastroPerifericos';
+import Login from './pages/Login/Login';
 
 class App extends React.Component  {
   constructor(props){
@@ -29,6 +30,7 @@ class App extends React.Component  {
           <Route path='/CadastroModelos' element={<CadastraModelo />} />
           <Route path='/CadastroPerifericos' element={ <CadastroPerifericos /> } />
           <Route path='/CadastraPessoas' element={<CadastraPessoas />} />
+          <Route path='/Login' element={<Login />} />
         </Routes>
       </Router>
     )

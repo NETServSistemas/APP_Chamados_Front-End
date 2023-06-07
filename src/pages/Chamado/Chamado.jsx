@@ -1,8 +1,6 @@
 import './Chamado.css';
 import React from 'react';
 
-
-
 //my component
 const Chamado = (props) => {
     return (

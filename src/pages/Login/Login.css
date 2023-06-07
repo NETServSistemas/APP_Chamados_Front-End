@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100vw;
+    max-height: 100vh;
+
+    background-image: url("../../../public/tai4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+.formLogin {
+    width: 90%;
+    max-width: 27rem;
+    min-height: 75vh;
+
+    background-color: #F7F2FA;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin: 10vh auto;
+}
+
+.logoLogin img {
+    max-width: 55%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.campoLogin {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+
+    position: relative;
+}
+
+.campoLogin button {
+    color: #8B51A1;
+    background-color: #F2F0F0;
+    max-width: 50px;
+    height: 5px;
+    border-radius: 100px;
+
+    position: absolute;
+    left: 56%;
+    top: 13px;
+}
+
+label {
+    color: #00438F;
+    font-size: 18px;
+    padding-left: 2rem;
+}
+
+input {
+    background: #F2F0F0;
+    border: 2px solid #8B51A1;
+    border-radius: 5px;
+
+    width: 85%;
+    height: 6vh;
+    margin-left: 2rem;
+    padding-left: 1em;
+
+    margin-top: 15px;
+}
+
+.btnLogin {
+    margin-top: 25px;
+}
+
+.senhaEsqueci a {
+    color: #DF2E2E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 18px;
+    text-decoration: none;
+    padding-bottom: 2em;
+}
+
+/*responsividade*/
+@media screen and (max-width: 768px) {
+    .formLogin {
+        width: 80%;
+        max-width: 30rem;
+    }
+
+    .logoLogin img {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .formLogin {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .campoLogin button {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    input {
+        width: 100%;
+    }
+}
