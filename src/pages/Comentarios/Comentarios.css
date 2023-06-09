@@ -20,7 +20,7 @@ body {
 
 .infoComentarios {
     width: 30vw;
-    min-height: 100%;
+    min-height: 110vh;
 
     padding: 2em;
     display: flex;
@@ -28,6 +28,23 @@ body {
 
     background: #ECECEC;
     box-shadow: 0px 3px 4px 3px rgba(0, 0, 0, 0.2)
+}
+
+.ativos {
+    margin-top: 50px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.ativos h3 {
+    font-size: 25px;
+    color: #00438F;
+}
+
+.ativos .perifericos {
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
 /*
@@ -54,7 +71,6 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-
 }
 
 
@@ -85,7 +101,7 @@ body {
 
 
 .detailsComentarios .coment {
-    margin-top: 20%;
+    margin-top: 10%;
     font-size: 20px;
     color: #404040;
 }
@@ -174,6 +190,6 @@ body {
     height: 80px;
     font-size: 35px;
     color: #ffff;
-    margin-top: 25%;
-    margin-left: 88%;
+    margin-top: 24%;
+    margin-left: 83%;
 }

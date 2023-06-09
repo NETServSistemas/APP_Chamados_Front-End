@@ -7,6 +7,7 @@ import man2 from '../../../public/man2.jpg'
 import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { formatDistance, subDays } from 'date-fns'
+import {ChamadosTeste} from '../../data/chamados';
 
 //my component
 const Comentarios = () => {
@@ -36,6 +37,12 @@ const Comentarios = () => {
         buscaRespostas();
     }, [])
 
+    //ativos
+    const chamado = ChamadosTeste[0];
+
+    const ativoPessoa = chamado.ativoPessoa;
+
+
 
     return(
         <body>
@@ -53,6 +60,13 @@ const Comentarios = () => {
                                 </div>
                             </div>
 
+                            <div className='ativos'>
+                                <h3>Ativos: </h3>
+                                <div className='perifericos'>
+                                    {ativoPessoa[0].nomeAtivo} {ativoPessoa[0].marcaAtivo.nomeMarcaAtivo} {ativoPessoa[0].modeloAtivo}
+                                </div>
+                            </div>
+
                             <div className='coment'>
                                 <p>{comentarios.descricaoComentario}</p>
                                 <br></br>
@@ -66,6 +80,7 @@ const Comentarios = () => {
                                 <div className='status'>
                                     <h3>Situação: {comentarios. statusComentario}</h3> 
                                 </div>
+                                
                             </div>
                         </div>
 
