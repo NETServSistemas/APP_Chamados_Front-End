@@ -24,8 +24,7 @@ class App extends React.Component  {
     return (
       <Router>
         <Routes>
-          <Route path='/' element={<Chamado />} />
-          <Route path='/Home' element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path='/Comentario' element={<Comentarios />} />
           <Route path='/CadastroModelos' element={<CadastraModelo />} />
           <Route path='/CadastroPerifericos' element={ <CadastroPerifericos /> } />

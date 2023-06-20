@@ -1,3 +1,14 @@
-.dados{
-    margin-right: 10%;
+.verMais {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.dados {
+    width: 63%;
+}
+
+.verMais button {
+    width: 30%;
+    margin-left: 28%;
 }
