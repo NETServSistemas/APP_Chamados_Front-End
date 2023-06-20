@@ -65,14 +65,14 @@ const CadastroPerifericos = (props) => {
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="staticBackdropLabel">Lista de Pessoas</h5>
+                            <h5 className="modal-title" id="staticBackdropLabel">Lista de Periféricos</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
 
                             {/*GRID LAYOUT PESSOAS*/}
-                            <table class="table">
-                                <thead class="thead-dark">
+                            <table className="table">
+                                <thead className="thead-dark">
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Descrição</th>
@@ -89,17 +89,12 @@ const CadastroPerifericos = (props) => {
                                     </tr>
                                     <tr>
                                         <th scope="row">2</th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>{perifericos.perifericosPessoa[0].descricaoPeriferico}</td>
+                                        <td>{perifericos.perifericosPessoa[0].marcaPeriferico}</td>
+                                        <td>{perifericos.perifericosPessoa[0].quantidade}</td>
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Understood</button>
                         </div>
                     </div>
                 </div>
@@ -166,7 +161,7 @@ const CadastroPerifericos = (props) => {
                 <div className="verMais">
                     <div className='data'></div>
                     <button onClick={() => handleListarPessoas(pessoa.idPessoas)} data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop">Ver Pessoas</button>
+                        data-bs-target="#staticBackdrop">Ver Periféricos</button>
                 </div>
 
                 <div className='dados'></div>

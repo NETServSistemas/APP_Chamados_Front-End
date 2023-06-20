@@ -120,3 +120,20 @@ body {
     left: 58%;
     top: 75%;
 }
+
+/*MODAL*/
+.modal-content {
+    width: 250%;
+}
+
+.table {
+    border-color: #8B51A1;
+}
+
+.thead-dark {
+    color: #8B51A1;
+}
+
+th {
+    color: #262626;
+}

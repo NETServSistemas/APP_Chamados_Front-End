@@ -12,3 +12,20 @@
     width: 30%;
     margin-left: 28%;
 }
+
+/*MODAL*/
+.modal-content {
+    width: 150%;
+}
+
+.table {
+    border-color: #8B51A1;
+}
+
+.thead-dark {
+    color: #8B51A1;
+}
+
+th {
+    color: #262626;
+}

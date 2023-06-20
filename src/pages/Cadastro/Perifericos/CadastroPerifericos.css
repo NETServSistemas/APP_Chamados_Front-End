@@ -1,11 +1,11 @@
-body{
+body {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
 }
 
-.compCadastroPeriferico{
+.compCadastroPeriferico {
     display: flex;
     flex-direction: row;
     width: 90vw;
@@ -13,7 +13,7 @@ body{
     margin-top: 7%;
 }
 
-.containerPeriferico h1{
+.containerPeriferico h1 {
     color: #00438F;
     font-size: 30px;
     display: flex;
@@ -22,11 +22,33 @@ body{
     padding: 2rem;
 }
 
-.form{
+.form {
     width: 40vw;
 }
 
-.dados{
+.dados {
     margin-left: 10%;
-    
+}
+
+/*MODAL*/
+.modal-title {
+    color: #00438F;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.modal-content {
+    width: 150%;
+}
+
+.table {
+    border-color: #8B51A1;
+}
+
+.thead-dark {
+    color: #8B51A1;
+}
+
+th {
+    color: #262626;
 }

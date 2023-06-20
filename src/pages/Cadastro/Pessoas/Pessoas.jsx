@@ -104,10 +104,6 @@ const CadastraPessoas = (props) => {
                                 </tbody>
                             </table>
                         </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Understood</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -165,7 +161,7 @@ const CadastraPessoas = (props) => {
                 <div className="verMais">
                     <div className='data'></div>
                     <button onClick={() => handleListarPessoas(pessoa.idPessoas)} data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop">Ver Modelos</button>
+                        data-bs-target="#staticBackdrop">Ver Pessoas</button>
                 </div>
 
                 <div className='dados'></div>
