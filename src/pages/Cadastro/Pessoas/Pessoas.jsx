@@ -2,14 +2,19 @@ import React, { useEffect, useState } from "react";
 import './Pessoas.css'
 import HeaderComponent from '../../../Componentes/Header';
 import { ChamadosTeste } from '../../../data/chamados';
+import { Link } from 'react-router-dom';
 
 
 
 const CadastraPessoas = (props) => {
     //criando um estado para cada campo do formulário
-    const [modalIsOpen, setIsOpen] = React.useState(false);
     const [chamado, setChamado] = useState([]);
     const [pessoa, setPessoa] = useState([]);
+
+    const [nome, setNome] = useState([]);
+    const [setor, setSetor] = useState([]);
+    const [gestor, setGestor] = useState([]);
+    const [ativos, setAtivos] = useState([]);
 
 
     useEffect(() => {
@@ -68,52 +73,55 @@ const CadastraPessoas = (props) => {
 
     return (
         <>
-            {/*ADICIONANDO O MODAL DIRETAMENTE DO BOOTSTRAP */}
-            <div className={`modal ${modalIsOpen == false ? 'fade' : ''}`} id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="staticBackdropLabel">Lista de Pessoas</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-
-                            {/*GRID LAYOUT PESSOAS*/}
-                            <table class="table">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Nome</th>
-                                        <th scope="col">Setor</th>
-                                        <th scope="col">Lider</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>{pessoas.pessoa.nomeChamado}</td>
-                                        <td>{pessoas.conversaChamado[0].setor}</td>
-                                        <td>{pessoas.conversaChamado[0].gestor}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>{pessoas.pessoa.nomeChamado}</td>
-                                        <td>{pessoas.conversaChamado[0].setor}</td>
-                                        <td>{pessoas.conversaChamado[0].gestor}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div className="CompCadastro">
                 <HeaderComponent />
 
                 <div className="container">
-                    <h1>Cadastro de Pessoas</h1>
-                    <div className='form'>
+                    <div className="table-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="staticBackdropLabel">Lista de Pessoas</h5>
+                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div className="modal-body">
+
+                                {/*GRID LAYOUT PESSOAS*/}
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Setor</th>
+                                            <th scope="col">Lider</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>{pessoas.pessoa.nomeChamado}</td>
+                                            <td>{pessoas.conversaChamado[0].setor}</td>
+                                            <td>{pessoas.conversaChamado[0].gestor}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>{pessoas.pessoa.nomeChamado}</td>
+                                            <td>{pessoas.conversaChamado[0].setor}</td>
+                                            <td>{pessoas.conversaChamado[0].gestor}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="addPessoa">
+                        <Link to="#">
+                            <button className="btnAdd">Adicionar Pessoa</button>
+                        </Link>
+
+
+                    </div>
+                    {/* <div className='form'>
 
                         <div className='campo'>
                             <label>Nome:</label>
@@ -156,15 +164,8 @@ const CadastraPessoas = (props) => {
                             <button className='salvar' onClick={() => handleSalvar()}>Salvar</button>
                             <button className='limpar' onClick={() => handlelimpar()}>Limpar</button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
-                <div className="verMais">
-                    <div className='data'></div>
-                    <button onClick={() => handleListarPessoas(pessoa.idPessoas)} data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop">Ver Pessoas</button>
-                </div>
-
-                <div className='dados'></div>
             </div>
         </>
     )

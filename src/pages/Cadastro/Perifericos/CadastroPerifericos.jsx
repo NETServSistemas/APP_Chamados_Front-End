@@ -2,6 +2,7 @@ import HeaderComponent from '../../../Componentes/Header';
 import './CadastroPerifericos.css';
 import React, { useState, useEffect } from 'react';
 import { ChamadosTeste } from '../../../data/chamados';
+import { Link } from 'react-router-dom';
 
 const CadastroPerifericos = (props) => {
     //criando um estado para cada campo do formulário
@@ -60,53 +61,54 @@ const CadastroPerifericos = (props) => {
 
     return (
         <>
-            {/*ADICIONANDO O MODAL DIRETAMENTE DO BOOTSTRAP */}
-            <div className={`modal ${modalIsOpen == false ? 'fade' : ''}`} id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="staticBackdropLabel">Lista de Periféricos</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-
-                            {/*GRID LAYOUT PESSOAS*/}
-                            <table className="table">
-                                <thead className="thead-dark">
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Descrição</th>
-                                        <th scope="col">Marca</th>
-                                        <th scope="col">Quantidade</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>{perifericos.perifericosPessoa[0].descricaoPeriferico}</td>
-                                        <td>{perifericos.perifericosPessoa[0].marcaPeriferico}</td>
-                                        <td>{perifericos.perifericosPessoa[0].quantidade}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>{perifericos.perifericosPessoa[0].descricaoPeriferico}</td>
-                                        <td>{perifericos.perifericosPessoa[0].marcaPeriferico}</td>
-                                        <td>{perifericos.perifericosPessoa[0].quantidade}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div className='compCadastroPeriferico'>
                 <HeaderComponent />
                 <div className='containerPeriferico'>
-                    <h1>Cadastro de Periféricos</h1>
+                    <div className="table-dialog">
+                        <div className="table-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="staticBackdropLabel">Lista de Periféricos</h5>
+                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div className="modal-body">
 
+                                {/*GRID LAYOUT PESSOAS*/}
+                                <table className="table">
+                                    <thead className="thead-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Descrição</th>
+                                            <th scope="col">Marca</th>
+                                            <th scope="col">Quantidade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>{perifericos.perifericosPessoa[0].descricaoPeriferico}</td>
+                                            <td>{perifericos.perifericosPessoa[0].marcaPeriferico}</td>
+                                            <td>{perifericos.perifericosPessoa[0].quantidade}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>{perifericos.perifericosPessoa[0].descricaoPeriferico}</td>
+                                            <td>{perifericos.perifericosPessoa[0].marcaPeriferico}</td>
+                                            <td>{perifericos.perifericosPessoa[0].quantidade}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
-                    <div className='form'>
+                    <div className="addPerifericos">
+                        <Link to="#">
+                            <button className="btnAdd">Adicionar Periféricos</button>
+                        </Link>
+                    </div>
+
+                    {/* <div className='form'>
 
                         <div className='campo'>
                             <label>Descrição:</label>
@@ -155,16 +157,8 @@ const CadastroPerifericos = (props) => {
                             <button className='salvar' onClick={() => handleSalvar()}>Salvar</button>
                             <button className='limpar' onClick={() => handlelimpar()}>Limpar</button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
-
-                <div className="verMais">
-                    <div className='data'></div>
-                    <button onClick={() => handleListarPessoas(pessoa.idPessoas)} data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop">Ver Periféricos</button>
-                </div>
-
-                <div className='dados'></div>
             </div>
         </>
     )

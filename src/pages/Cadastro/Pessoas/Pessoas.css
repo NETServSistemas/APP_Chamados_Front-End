@@ -1,31 +1,29 @@
-.verMais {
+/*MODAL*/
+
+.compCadastroPeriferico {
+    max-width: 100vw;
+    min-width: 100vw;
     display: flex;
     flex-direction: column;
-    width: 50%;
 }
 
-.dados {
-    width: 63%;
+.table-dialog {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    align-items: center;
+
 }
 
-.verMais button {
-    width: 30%;
-    margin-left: 28%;
+.table-content {
+    display: flex;
+    flex-direction: column;
 }
 
-/*MODAL*/
-.modal-content {
-    width: 150%;
+.addPessoa {
+    width: 200%;
 }
 
-.table {
-    border-color: #8B51A1;
-}
-
-.thead-dark {
-    color: #8B51A1;
-}
-
-th {
-    color: #262626;
+.addPessoa a {
+    margin-right: 5%;
 }

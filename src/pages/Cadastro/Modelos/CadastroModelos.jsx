@@ -2,6 +2,7 @@ import HeaderComponent from '../../../Componentes/Header';
 import { ChamadosTeste } from '../../../data/chamados';
 import './CadastroModelos.css';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const CadastraModelo = (props) => {
 
@@ -76,82 +77,86 @@ const CadastraModelo = (props) => {
 
     return (
         <>
-            {/*ADICIONANDO O MODAL DIRETAMENTE DO BOOTSTRAP */}
-            <div className={`modal ${modalIsOpen == false ? 'fade' : ''}`} id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="staticBackdropLabel">Lista de Modelos</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-
-                            {/*GRID LAYOUT PESSOAS*/}
-                            <table class="table">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Descrição</th>
-                                        <th scope="col">Tela</th>
-                                        <th scope="col">Chips</th>
-                                        <th scope="col">Memória</th>
-                                        <th scope="col">Armazenamento</th>
-                                        <th scope="col">Portas USB</th>
-                                        <th scope="col">Portas Rede</th>
-                                        <th scope="col">Marca</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>{modelos.modeloPessoa[0].descricaoModelo}</td>
-                                        <td>{modelos.modeloPessoa[0].tamanhoTela}</td>
-                                        <td>{modelos.modeloPessoa[0].QntdChips}</td>
-                                        <td>{modelos.modeloPessoa[0].Memoria}</td>
-                                        <td>{modelos.modeloPessoa[0].Armazenamento}</td>
-                                        <td>{modelos.modeloPessoa[0].PortasUSB}</td>
-                                        <td>{modelos.modeloPessoa[0].PortasRede}</td>
-                                        <td>{modelos.modeloPessoa[0].MarcaModelo}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>{modelos.modeloPessoa[0].descricaoModelo}</td>
-                                        <td>{modelos.modeloPessoa[0].tamanhoTela}</td>
-                                        <td>{modelos.modeloPessoa[0].QntdChips}</td>
-                                        <td>{modelos.modeloPessoa[0].Memoria}</td>
-                                        <td>{modelos.modeloPessoa[0].Armazenamento}</td>
-                                        <td>{modelos.modeloPessoa[0].PortasUSB}</td>
-                                        <td>{modelos.modeloPessoa[0].PortasRede}</td>
-                                        <td>{modelos.modeloPessoa[0].MarcaModelo}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div className='CompCadastro'>
                 <HeaderComponent />
                 <div className='container'>
-                    <h1>Cadastro de Modelos</h1>
-                    <div className='form'>
+
+                    <div className="table-dialog">
+                        <div className="table-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="staticBackdropLabel">Lista de Modelos</h5>
+                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div className="modal-body">
+
+                                {/*GRID LAYOUT PESSOAS*/}
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Descrição</th>
+                                            <th scope="col">Tela</th>
+                                            <th scope="col">Chips</th>
+                                            <th scope="col">Memória</th>
+                                            <th scope="col">Armazenamento</th>
+                                            <th scope="col">Portas USB</th>
+                                            <th scope="col">Portas Rede</th>
+                                            <th scope="col">Marca</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>{modelos.modeloPessoa[0].descricaoModelo}</td>
+                                            <td>{modelos.modeloPessoa[0].tamanhoTela}</td>
+                                            <td>{modelos.modeloPessoa[0].QntdChips}</td>
+                                            <td>{modelos.modeloPessoa[0].Memoria}</td>
+                                            <td>{modelos.modeloPessoa[0].Armazenamento}</td>
+                                            <td>{modelos.modeloPessoa[0].PortasUSB}</td>
+                                            <td>{modelos.modeloPessoa[0].PortasRede}</td>
+                                            <td>{modelos.modeloPessoa[0].MarcaModelo}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>{modelos.modeloPessoa[0].descricaoModelo}</td>
+                                            <td>{modelos.modeloPessoa[0].tamanhoTela}</td>
+                                            <td>{modelos.modeloPessoa[0].QntdChips}</td>
+                                            <td>{modelos.modeloPessoa[0].Memoria}</td>
+                                            <td>{modelos.modeloPessoa[0].Armazenamento}</td>
+                                            <td>{modelos.modeloPessoa[0].PortasUSB}</td>
+                                            <td>{modelos.modeloPessoa[0].PortasRede}</td>
+                                            <td>{modelos.modeloPessoa[0].MarcaModelo}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="addModelo">
+                        <Link to="#">
+                            <button className="btnAdd">Adicionar Modelo</button>
+                        </Link>
+                    </div>
+
+                    {/* <div className='form'>
 
                         <div className='campo'>
                             <label>Tipo de modelo:</label>
                             <select name="tipomodelo" id="tipo" value={props.tipomodelo}
                                 onChange={(e) => setTipoModelo(e.target.value)}>
                                 <option value={null}>Selecione</option>
-                                <option value={"Notebook"}>Notebook</option> {/*colocando a opção que será usada para renderizar o formulário correto no value */}
+                                <option value={"Notebook"}>Notebook</option> {colocando a opção que será usada para renderizar o formulário correto no value 
                                 <option value={"Smartphone"}>Smartphone</option>
                             </select>
                         </div>
 
-                        {/*verificação do tipo de modelo para trazer o formulário correspondente*/}
+                       
                         {tipomodelo !== null && (
                             <>
                                 {tipomodelo === 'Notebook' ? (
-                                    <>   {/*renderiza o form do notebook */}
+                                    <>  
                                         <div className='campo'>
                                             <label>Descrição:</label>
                                             <input type='text' name='descricao' value={props.descricao}
@@ -233,7 +238,7 @@ const CadastraModelo = (props) => {
                                             <button className='limpar' onClick={handlelimpar}>Limpar</button>
                                         </div>
                                     </>
-                                ) : tipomodelo === 'Smartphone' ? ( /*renderiza o form do notebook */
+                                ) : tipomodelo === 'Smartphone' ? ( 
                                     <>
                                         <div className='campo'>
                                             <label>Descrição:</label>
@@ -297,15 +302,9 @@ const CadastraModelo = (props) => {
                                 ) : null}
                             </>
                         )}
-                    </div>
-                    <div className="verMais">
-                        <div className='data'></div>
-                        <button onClick={() => handleListarPessoas(pessoa.idPessoas)} data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">Ver Modelos</button>
-                    </div>
+                    </div> */}
 
                 </div>
-                <div className='dados'></div>
             </div>
         </>
     )
