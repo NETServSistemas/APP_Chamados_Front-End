@@ -84,9 +84,8 @@ const CadastraModelo = (props) => {
 
                     <div className="table-dialog">
                         <div className="table-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title" id="staticBackdropLabel">Lista de Modelos</h5>
-                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div className="table-header">
+                                <h5 className="table-title" id="staticBackdropLabel">Lista de Modelos</h5>
                             </div>
                             <div className="modal-body">
 
@@ -132,13 +131,15 @@ const CadastraModelo = (props) => {
                                 </table>
                             </div>
                         </div>
+
+                        <div className="addModelo">
+                            <Link to="#">
+                                <button className="btnAdd">Adicionar Modelo</button>
+                            </Link>
+                        </div>
                     </div>
 
-                    <div className="addModelo">
-                        <Link to="#">
-                            <button className="btnAdd">Adicionar Modelo</button>
-                        </Link>
-                    </div>
+
 
                     {/* <div className='form'>
 

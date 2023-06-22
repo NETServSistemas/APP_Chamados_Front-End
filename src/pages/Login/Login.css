@@ -11,7 +11,7 @@ body {
     width: 100vw;
     max-height: 100vh;
 
-    background-image: url("../../../public/tai4.jpg");
+    background-image: url("./tai4.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 

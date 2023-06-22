@@ -67,12 +67,11 @@ const CadastroPerifericos = (props) => {
                 <div className='containerPeriferico'>
                     <div className="table-dialog">
                         <div className="table-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title" id="staticBackdropLabel">Lista de Periféricos</h5>
-                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div className="table-header">
+                                <h5 className="table-title" id="staticBackdropLabel">Lista de Periféricos</h5>
                             </div>
-                            <div className="modal-body">
 
+                            <div className="table-body">
                                 {/*GRID LAYOUT PESSOAS*/}
                                 <table className="table">
                                     <thead className="thead-dark">
@@ -100,13 +99,15 @@ const CadastroPerifericos = (props) => {
                                 </table>
                             </div>
                         </div>
+
+                        <div className="addPerifericos">
+                            <Link to="#">
+                                <button className="btnAdd">Adicionar Periféricos</button>
+                            </Link>
+                        </div>
                     </div>
 
-                    <div className="addPerifericos">
-                        <Link to="#">
-                            <button className="btnAdd">Adicionar Periféricos</button>
-                        </Link>
-                    </div>
+
 
                     {/* <div className='form'>
 
