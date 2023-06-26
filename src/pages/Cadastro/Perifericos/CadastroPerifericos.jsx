@@ -214,7 +214,7 @@ const CadastroPerifericos = (props) => {
 
             <div className='compCadastroPeriferico'>
                 <HeaderComponent />
-                <div className='containerPeriferico'>
+                <div className='table-tudo'>
                     <div className="table-dialog">
                         <div className="table-content">
                             <div className="table-header">

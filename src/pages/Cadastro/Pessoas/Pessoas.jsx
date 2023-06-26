@@ -210,7 +210,7 @@ const CadastraPessoas = (props) => {
             <div className="CompCadastro">
                 <HeaderComponent />
 
-                <div className="container">
+                <div className="table-tudo">
                     <div className="table-dialog">
                         <div className="table-content">
                             <div className="table-header">

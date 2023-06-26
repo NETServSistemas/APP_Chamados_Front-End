@@ -8,7 +8,17 @@
     margin-top: 10vw;
 }
 
+.CompCadastro {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
 .table-dialog {
+    width: 90%;
     min-width: 85vw;
     min-height: 20vh;
     background-color: #F7F2FA;
