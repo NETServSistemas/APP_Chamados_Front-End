@@ -90,3 +90,50 @@
 .btnAdd {
     width: 20vw;
 }
+
+/*MODAL FORM*/
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.modal-title {
+    color: #00438F;
+}
+
+.campo {
+    margin-top: 25px;
+}
+
+.campo label {
+    color: #262626;
+}
+
+select {
+    width: 20vw;
+    height: 5vh;
+    border-style: solid;
+    border-color: #8B51A1;
+    border-radius: 5px;
+}
+
+.buttons-salvar {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 40px;
+    margin-left: 5%;
+}
+
+.buttons-salvar .salvar {
+    width: 15vw;
+    background-color: #33BC31;
+}
+
+.buttons-salvar .limpar {
+    width: 15vw;
+    margin-left: 5%;
+    background-color: #DF2E2E;
+}

@@ -47,3 +47,59 @@
 .btnAdd {
     width: 20vw;
 }
+
+/*MODAL FORM*/
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.modal-title {
+    color: #00438F;
+}
+
+.campo {
+    margin-top: 25px;
+}
+
+.campo label {
+    color: #262626;
+}
+
+.campo-select {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+}
+
+.campo-select select {
+    border-style: solid;
+    border-color: #8B51A1;
+    border-radius: 5px;
+}
+
+.campo-select label {
+    color: #262626;
+}
+
+.buttons-salvar {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 40px;
+
+}
+
+.buttons-salvar .salvar {
+    width: 10vw;
+    background-color: #33BC31;
+}
+
+.buttons-salvar .limpar {
+    width: 15vw;
+    margin-left: 5%;
+    background-color: #DF2E2E;
+}

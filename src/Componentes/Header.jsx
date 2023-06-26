@@ -81,7 +81,7 @@ const HeaderComponent = () => {
                             <FontAwesomeIcon icon={faBars} className="menu" />
                         </button>
 
-                        <Link to="/">
+                        <Link to="/Home">
                             <button className='filtro' >Home</button>
                         </Link>
 

@@ -3,6 +3,9 @@ import './CadastroPerifericos.css';
 import React, { useState, useEffect } from 'react';
 import { ChamadosTeste } from '../../../data/chamados';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons'
+import CadastraPessoas from '../Pessoas/Pessoas';
 
 const CadastroPerifericos = (props) => {
     //criando um estado para cada campo do formulário
@@ -61,6 +64,153 @@ const CadastroPerifericos = (props) => {
 
     return (
         <>
+            {/*MODAL EXCLUIR*/}
+            <div className={`modal ${modalIsOpen == false ? 'fade' : ''}`} id="excluirPessoa" tabIndex="-1" aria-labelledby="excluirPessoaModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title">Alerta!</h5>
+                        </div>
+                        <div className="modal-body">
+                            <p>Deseja excluir esta pessoa?</p>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btnSim">Sim</button>
+                            <button type="button" className="btnNao" data-bs-dismiss="modal">Não</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/*MODAL EDITE */}
+            <div className={`modal ${modalIsOpen == false ? 'fade' : ''}`} id="editarPeriferico" tabIndex="-1" aria-labelledby="editarPerifericoModalLabel" aria-hidden="true"> {/*fazemos uma verificação se existe um modal */}
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Editar Modelos</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            {/* codigo detalhes */}
+                            <div className='form'>
+
+                                <div className='campo'>
+                                    <label>Descrição:</label>
+                                    <input type='text' name='descricao' value={perifericos.perifericosPessoa[0].descricaoPeriferico}
+                                        placeholder='Descreva o modelo'
+                                        onChange={(e) => setDescricao(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className='campo-select'>
+                                    <label>Tipo de Periférico:</label>
+                                    <select name="tipoperiferico" id="tela" value={perifericos.perifericosPessoa[0].descricaoPeriferico}
+                                        onChange={(e) => setTipoPeriferico(e.target.value)}>
+                                        <option>Nenhum</option>
+                                        <option>Mouse</option>
+                                        <option>Teclado</option>
+                                        <option>Fone de ouvido</option>
+                                        <option>Fonte</option>
+                                        <option>Adaptador de fone de ouvido</option>
+                                        <option>Monitor</option>
+                                    </select>
+                                </div>
+
+                                <div className='campo-select'>
+                                    <label>Marca:</label>
+                                    <select name="marca" id="tela" value={perifericos.perifericosPessoa[0].marcaPeriferico}
+                                        onChange={(e) => setMarcaPeriferico(e.target.value)}>
+                                        <option>Nenhum</option>
+                                        <option>Philco</option>
+                                        <option>Aoc</option>
+                                        <option>LG</option>
+                                        <option>Positivo</option>
+                                        <option>Lenovo</option>
+                                    </select>
+                                </div>
+
+                                <div className='campo'>
+                                    <label>Quantidade Perifericos:</label>
+                                    <input type='text' name='qtdPerifericos' value={perifericos.perifericosPessoa[0].quantidade}
+                                        placeholder='Descreva o modelo'
+                                        onChange={(e) => setQtdPerifericos(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className='buttons-salvar '>
+                                    <button className='salvar' onClick={() => handleSalvar()}>Salvar</button>
+                                    <button className='limpar' onClick={() => handlelimpar()}>Limpar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/*MODAL CRIAR */}
+            <div className={`modal ${modalIsOpen == false ? 'fade' : ''}`} id="criarPeriferico" tabIndex="-1" aria-labelledby="criarPerifericoModalLabel" aria-hidden="true"> {/*fazemos uma verificação se existe um modal */}
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Criando Modelos</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            {/* codigo detalhes */}
+                            <div className='form'>
+
+                                <div className='campo'>
+                                    <label>Descrição:</label>
+                                    <input type='text' name='descricao' value={props.descricao}
+                                        placeholder='Descreva o modelo'
+                                        onChange={(e) => setDescricao(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className='campo-select'>
+                                    <label>Tipo de Periférico:</label>
+                                    <select name="tipoperiferico" id="tela" value={props.tipoPeriferico}
+                                        onChange={(e) => setTipoPeriferico(e.target.value)}>
+                                        <option>Nenhum</option>
+                                        <option>Mouse</option>
+                                        <option>Teclado</option>
+                                        <option>Fone de ouvido</option>
+                                        <option>Fonte</option>
+                                        <option>Adaptador de fone de ouvido</option>
+                                        <option>Monitor</option>
+                                    </select>
+                                </div>
+
+                                <div className='campo-select'>
+                                    <label>Marca:</label>
+                                    <select name="marca" id="tela" value={props.marca}
+                                        onChange={(e) => setMarcaPeriferico(e.target.value)}>
+                                        <option>Nenhum</option>
+                                        <option>Philco</option>
+                                        <option>Aoc</option>
+                                        <option>LG</option>
+                                        <option>Positivo</option>
+                                        <option>Lenovo</option>
+                                    </select>
+                                </div>
+
+                                <div className='campo'>
+                                    <label>Quantidade Perifericos:</label>
+                                    <input type='text' name='qtdPerifericos' value={props.quantidade}
+                                        placeholder='Descreva o modelo'
+                                        onChange={(e) => setQtdPerifericos(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className='buttons-salvar '>
+                                    <button className='salvar' onClick={() => handleSalvar()}>Salvar</button>
+                                    <button className='limpar' onClick={() => handlelimpar()}>Limpar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div className='compCadastroPeriferico'>
                 <HeaderComponent />
@@ -88,12 +238,36 @@ const CadastroPerifericos = (props) => {
                                             <td>{perifericos.perifericosPessoa[0].descricaoPeriferico}</td>
                                             <td>{perifericos.perifericosPessoa[0].marcaPeriferico}</td>
                                             <td>{perifericos.perifericosPessoa[0].quantidade}</td>
+                                            <td>
+                                                <Link to="#">
+                                                    <FontAwesomeIcon icon={faPenToSquare} className="btnEdit"
+                                                        data-bs-toggle="modal" data-bs-target="#editarPeriferico" />
+                                                </Link>
+                                            </td>
+                                            <td>
+                                                <Link to="#">
+                                                    <FontAwesomeIcon icon={faTrash} className="btnExcluir"
+                                                        data-bs-toggle="modal" data-bs-target="#excluirPessoa" />
+                                                </Link>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th scope="row">2</th>
                                             <td>{perifericos.perifericosPessoa[0].descricaoPeriferico}</td>
                                             <td>{perifericos.perifericosPessoa[0].marcaPeriferico}</td>
                                             <td>{perifericos.perifericosPessoa[0].quantidade}</td>
+                                            <td>
+                                                <Link to="#">
+                                                    <FontAwesomeIcon icon={faPenToSquare} className="btnEdit"
+                                                        data-bs-toggle="modal" data-bs-target="#editarPeriferico" />
+                                                </Link>
+                                            </td>
+                                            <td>
+                                                <Link to="#">
+                                                    <FontAwesomeIcon icon={faTrash} className="btnExcluir"
+                                                        data-bs-toggle="modal" data-bs-target="#excluirPessoa" />
+                                                </Link>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -102,63 +276,11 @@ const CadastroPerifericos = (props) => {
 
                         <div className="addPerifericos">
                             <Link to="#">
-                                <button className="btnAdd">Adicionar Periféricos</button>
+                                <button className='btnAdd' data-bs-toggle="modal" data-bs-target="#criarPeriferico">Adicionar Periféricos</button>
                             </Link>
                         </div>
                     </div>
 
-
-
-                    {/* <div className='form'>
-
-                        <div className='campo'>
-                            <label>Descrição:</label>
-                            <input type='text' name='descricao' value={props.descricao}
-                                placeholder='Descreva o modelo'
-                                onChange={(e) => setDescricao(e.target.value)}
-                            />
-                        </div>
-
-                        <div className='campo'>
-                            <label>Tipo de Periférico:</label>
-                            <select name="tipoperiferico" id="tela" value={props.tipoPeriferico}
-                                onChange={(e) => setTipoPeriferico(e.target.value)}>
-                                <option>Nenhum</option>
-                                <option>Mouse</option>
-                                <option>Teclado</option>
-                                <option>Fone de ouvido</option>
-                                <option>Fonte</option>
-                                <option>Adaptador de fone de ouvido</option>
-                                <option>Monitor</option>
-                            </select>
-                        </div>
-
-                        <div className='campo'>
-                            <label>Marca:</label>
-                            <select name="marca" id="tela" value={props.marca}
-                                onChange={(e) => setMarcaPeriferico(e.target.value)}>
-                                <option>Nenhum</option>
-                                <option>Philco</option>
-                                <option>Aoc</option>
-                                <option>LG</option>
-                                <option>Positivo</option>
-                                <option>Lenovo</option>
-                            </select>
-                        </div>
-
-                        <div className='campo'>
-                            <label>Quantidade Perifericos:</label>
-                            <input type='text' name='qtdPerifericos' value={props.quantidade}
-                                placeholder='Descreva o modelo'
-                                onChange={(e) => setQtdPerifericos(e.target.value)}
-                            />
-                        </div>
-
-                        <div className='btns'>
-                            <button className='salvar' onClick={() => handleSalvar()}>Salvar</button>
-                            <button className='limpar' onClick={() => handlelimpar()}>Limpar</button>
-                        </div>
-                    </div> */}
                 </div>
             </div>
         </>

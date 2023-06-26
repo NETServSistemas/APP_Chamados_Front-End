@@ -47,3 +47,79 @@
 .btnAdd {
     width: 20vw;
 }
+
+td .btnEdit {
+    color: #8B51A1;
+    cursor: pointer;
+}
+
+.btnExcluir {
+    color: #00438F;
+    cursor: pointer;
+}
+
+/*MODAL FORM*/
+.modal-body {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.modal-title {
+    color: #00438F;
+}
+
+.campo {
+    margin-top: 25px;
+}
+
+.campo label {
+    color: #262626;
+}
+
+select {
+    width: 20vw;
+    height: 5vh;
+    border-style: solid;
+    border-color: #8B51A1;
+    border-radius: 5px;
+}
+
+.buttons-salvar {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 40px;
+    margin-left: 5%;
+}
+
+.buttons-salvar .salvar {
+    width: 15vw;
+    background-color: #33BC31;
+}
+
+.buttons-salvar .limpar {
+    width: 15vw;
+    margin-left: 5%;
+    background-color: #DF2E2E;
+}
+
+/*MODAL EXCLUIR*/
+.modal-content {
+    width: 120%;
+}
+
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-footer .btnSim {
+    width: 20%;
+    background-color: #33BC31;
+}
+
+.modal-footer .btnNao {
+    width: 20%;
+    background-color: #DF2E2E;
+}
